@@ -1,1 +1,2 @@
-# Project using Kivy API and python
+# Brick Breaker
+made using Python 2.7 and Kivy API
