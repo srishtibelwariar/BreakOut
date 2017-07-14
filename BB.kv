@@ -1,0 +1,27 @@
+#:kivy 1.0.9
+<BBgame>:
+    ball: bb_ball
+    player: paddle
+
+    BBBall:
+        id: bb_ball
+        center_x: root.center_x
+    BBPaddle:
+        id: paddle
+        y: root.y+20
+        center_x: root.center_x
+  
+
+<BBBall>:
+    size: 50, 50
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<BBPaddle>:
+    size: 200,30
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
