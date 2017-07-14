@@ -1,2 +1,1 @@
-# TicTacToe
-Tic Tac Toe GUI using Kivy API
+# Project using Kivy API and python
