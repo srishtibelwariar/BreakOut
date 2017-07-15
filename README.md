@@ -1,3 +1,3 @@
 # Brick Breaker
-made using Python 2.7 and Kivy API
-CURRENTLY IN PROGRESS
+- made using Python 2.7 and Kivy API
+- CURRENTLY IN PROGRESS
