@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-
-#Breakout game
+#BreakOut game
 #Srishti Belwariar
 
 from kivy.app import App
@@ -13,7 +12,15 @@ from kivy.properties import ObjectProperty
 
 
 class BBBrick(Widget):
-    pass
+    def bounce_off_brick(self, ball):
+        if self.collide_widget(ball):
+            vx, vy = ball.v
+            offset = (ball.center_x - self.center_x) / (self.height/ 2)
+            vy= vy* -1
+            rebound = Vector(vx, vy)
+            vel = rebound * 1
+            ball.v = vel.x, vel.y + offset
+            self.size = 0;
 
 class BBPaddle(Widget):
     def bounce_ball(self, ball):
@@ -22,7 +29,7 @@ class BBPaddle(Widget):
             offset = (ball.center_x - self.center_x) / (self.height/ 2)
             vy= vy* -1
             rebound = Vector(vx, vy)
-            vel = rebound
+            vel = rebound *1
             ball.v = vel.x, vel.y + offset
 
 
@@ -38,6 +45,7 @@ class BBBall(Widget):
 class BBGame(Widget):
     ball = ObjectProperty(None)
     player= ObjectProperty(None)
+    brick=ObjectProperty(None)
     
     def serve_ball(self,  vel=(4, 0)):
         self.ball.center_x = self.player.center_x
@@ -47,6 +55,34 @@ class BBGame(Widget):
     def update(self, dt):
         self.ball.move()
         self.player.bounce_ball(self.ball)
+        self.b10.bounce_off_brick(self.ball)
+        self.b20.bounce_off_brick(self.ball)
+        self.b30.bounce_off_brick(self.ball)
+        self.b40.bounce_off_brick(self.ball)
+        self.b50.bounce_off_brick(self.ball)
+        self.b60.bounce_off_brick(self.ball)
+        self.b70.bounce_off_brick(self.ball)
+        self.b11.bounce_off_brick(self.ball)
+        self.b21.bounce_off_brick(self.ball)
+        self.b31.bounce_off_brick(self.ball)
+        self.b41.bounce_off_brick(self.ball)
+        self.b51.bounce_off_brick(self.ball)
+        self.b61.bounce_off_brick(self.ball)
+        self.b71.bounce_off_brick(self.ball)
+        self.b12.bounce_off_brick(self.ball)
+        self.b22.bounce_off_brick(self.ball)
+        self.b32.bounce_off_brick(self.ball)
+        self.b42.bounce_off_brick(self.ball)
+        self.b52.bounce_off_brick(self.ball)
+        self.b62.bounce_off_brick(self.ball)
+        self.b72.bounce_off_brick(self.ball)
+        self.b13.bounce_off_brick(self.ball)
+        self.b23.bounce_off_brick(self.ball)
+        self.b33.bounce_off_brick(self.ball)
+        self.b43.bounce_off_brick(self.ball)
+        self.b53.bounce_off_brick(self.ball)
+        self.b63.bounce_off_brick(self.ball)
+        self.b73.bounce_off_brick(self.ball)
         
         # bounce off top, left and right edges
         if (self.ball.top > self.height):

@@ -1,4 +1,5 @@
 #:kivy 1.0.9
+
 <BBgame>:
     ball: bb_ball
     player: paddle
@@ -161,8 +162,7 @@
         id: brick73
         center_y: 7*self.parent.center_y/4
         center_x: 7*self.parent.center_x/4
-        
-        
+   
 <BBBall>:
     size: 50, 50
     canvas:
@@ -171,7 +171,14 @@
             size: self.size
 
 <BBPaddle>:
-    size: 200,30
+    size: 250,30
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            
+<BBBrick>:
+    size: 150,60
     canvas:
         Rectangle:
             pos: self.pos
