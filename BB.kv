@@ -2,7 +2,39 @@
 <BBgame>:
     ball: bb_ball
     player: paddle
-
+    b10: brick10
+    b20: brick20
+    b30: brick30
+    b40: brick40
+    b50: brick50
+    b60: brick60
+    b70: brick70
+    
+    b11: brick11
+    b21: brick21
+    b31: brick31
+    b41: brick41
+    b51: brick51
+    b61: brick61
+    b71: brick71
+    
+    b12: brick12
+    b22: brick22
+    b32: brick32
+    b42: brick42
+    b52: brick52
+    b62: brick62
+    b72: brick72
+    
+    b13: brick13
+    b23: brick23
+    b33: brick33
+    b43: brick43
+    b53: brick53
+    b63: brick63
+    b73: brick73
+    
+    
     BBBall:
         id: bb_ball
         center_x: root.center_x
@@ -10,8 +42,127 @@
         id: paddle
         y: root.y+20
         center_x: root.center_x
-  
-
+        
+    BBBrick:
+        id: brick10
+        center_y: self.parent.center_y
+        center_x: self.parent.center_x/4
+    BBBrick:
+        id: brick20
+        center_y: self.parent.center_y
+        center_x: 2*self.parent.center_x/4
+    BBBrick:
+        id: brick30
+        center_y: self.parent.center_y
+        center_x: 3*self.parent.center_x/4
+    BBBrick:
+        id: brick40
+        center_y: self.parent.center_y
+        center_x: 4*self.parent.center_x/4
+    BBBrick:
+        id: brick50
+        center_y: self.parent.center_y
+        center_x: 5*self.parent.center_x/4
+    BBBrick:
+        id: brick60
+        center_y: self.parent.center_y
+        center_x: 6*self.parent.center_x/4
+    BBBrick:
+        id: brick70
+        center_y: self.parent.center_y
+        center_x: 7*self.parent.center_x/4
+      
+        
+    BBBrick:
+        id: brick11
+        center_y: 5*self.parent.center_y/4
+        center_x: self.parent.center_x/4
+    BBBrick:
+        id: brick21
+        center_y: 5*self.parent.center_y/4
+        center_x: 2*self.parent.center_x/4
+    BBBrick:
+        id: brick31
+        center_y: 5*self.parent.center_y/4
+        center_x: 3*self.parent.center_x/4
+    BBBrick:
+        id: brick41
+        center_y: 5*self.parent.center_y/4
+        center_x: 4*self.parent.center_x/4
+    BBBrick:
+        id: brick51
+        center_y: 5*self.parent.center_y/4
+        center_x: 5*self.parent.center_x/4
+    BBBrick:
+        id: brick61
+        center_y: 5*self.parent.center_y/4
+        center_x: 6*self.parent.center_x/4
+    BBBrick:
+        id: brick71
+        center_y: 5*self.parent.center_y/4
+        center_x: 7*self.parent.center_x/4
+    
+    
+    BBBrick:
+        id: brick12
+        center_y: 6*self.parent.center_y/4
+        center_x: self.parent.center_x/4
+    BBBrick:
+        id: brick22
+        center_y: 6*self.parent.center_y/4
+        center_x: 2*self.parent.center_x/4
+    BBBrick:
+        id: brick32
+        center_y: 6*self.parent.center_y/4
+        center_x: 3*self.parent.center_x/4
+    BBBrick:
+        id: brick42
+        center_y: 6*self.parent.center_y/4
+        center_x: 4*self.parent.center_x/4
+    BBBrick:
+        id: brick52
+        center_y: 6*self.parent.center_y/4
+        center_x: 5*self.parent.center_x/4
+    BBBrick:
+        id: brick62
+        center_y: 6*self.parent.center_y/4
+        center_x: 6*self.parent.center_x/4
+    BBBrick:
+        id: brick72
+        center_y: 6*self.parent.center_y/4
+        center_x: 7*self.parent.center_x/4
+    
+    
+    BBBrick:
+        id: brick13
+        center_y: 7*self.parent.center_y/4
+        center_x: self.parent.center_x/4
+    BBBrick:
+        id: brick23
+        center_y: 7*self.parent.center_y/4
+        center_x: 2*self.parent.center_x/4
+    BBBrick:
+        id: brick33
+        center_y: 7*self.parent.center_y/4
+        center_x: 3*self.parent.center_x/4
+    BBBrick:
+        id: brick43
+        center_y: 7*self.parent.center_y/4
+        center_x: 4*self.parent.center_x/4
+    BBBrick:
+        id: brick53
+        center_y: 7*self.parent.center_y/4
+        center_x: 5*self.parent.center_x/4
+    BBBrick:
+        id: brick63
+        center_y: 7*self.parent.center_y/4
+        center_x: 6*self.parent.center_x/4
+    BBBrick:
+        id: brick73
+        center_y: 7*self.parent.center_y/4
+        center_x: 7*self.parent.center_x/4
+        
+        
 <BBBall>:
     size: 50, 50
     canvas:
