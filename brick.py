@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#Brick Breaker game
+#Breakout game
 #Srishti Belwariar
 
 from kivy.app import App
@@ -12,6 +12,8 @@ from kivy.properties import ReferenceListProperty
 from kivy.properties import ObjectProperty
 
 
+class BBBrick(Widget):
+    pass
 
 class BBPaddle(Widget):
     def bounce_ball(self, ball):
