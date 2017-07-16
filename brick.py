@@ -13,14 +13,18 @@ from kivy.properties import ObjectProperty
 
 class BBBrick(Widget):
     def bounce_off_brick(self, ball):
-        if self.collide_widget(ball):
+        if self.collide_widget(ball) and self.parent!=None:
             vx, vy = ball.v
-            offset = (ball.center_x - self.center_x) / (self.height/ 2)
+            offset = (ball.center_x - self.center_x)/ (self.height)
             vy= vy* -1
             rebound = Vector(vx, vy)
-            vel = rebound * 1
-            ball.v = vel.x, vel.y + offset
-            self.size = 0,0
+            vel = rebound * 1                          
+            ball.v = vel.x, vel.y +offset
+            #self.size = 0,0
+            #self.disabled=True
+            self.parent.remove_widget(self)
+            
+            
 
 class BBPaddle(Widget):
     def bounce_ball(self, ball):
@@ -45,7 +49,38 @@ class BBBall(Widget):
 class BBGame(Widget):
     ball = ObjectProperty(None)
     player= ObjectProperty(None)
-    brick=ObjectProperty(None)
+    
+    b10= ObjectProperty(None)
+    b20= ObjectProperty(None)
+    b30= ObjectProperty(None)
+    b40= ObjectProperty(None)
+    b50= ObjectProperty(None)
+    b60= ObjectProperty(None)
+    b70= ObjectProperty(None)
+    
+    b11= ObjectProperty(None)
+    b21= ObjectProperty(None)
+    b31= ObjectProperty(None)
+    b41= ObjectProperty(None)
+    b51= ObjectProperty(None)
+    b61= ObjectProperty(None)
+    b71= ObjectProperty(None)
+
+    b12= ObjectProperty(None)
+    b22= ObjectProperty(None)
+    b32= ObjectProperty(None)
+    b42= ObjectProperty(None)
+    b52= ObjectProperty(None)
+    b62= ObjectProperty(None)
+    b72= ObjectProperty(None)
+   
+    b13= ObjectProperty(None)
+    b23= ObjectProperty(None)
+    b33= ObjectProperty(None)
+    b43= ObjectProperty(None)
+    b53= ObjectProperty(None)
+    b63= ObjectProperty(None)
+    b73= ObjectProperty(None)
     
     def serve_ball(self,  vel=(4, 0)):
         self.ball.center_x = self.player.center_x
@@ -55,6 +90,7 @@ class BBGame(Widget):
     def update(self, dt):
         self.ball.move()
         self.player.bounce_ball(self.ball)
+        
         self.b10.bounce_off_brick(self.ball)
         self.b20.bounce_off_brick(self.ball)
         self.b30.bounce_off_brick(self.ball)
@@ -93,10 +129,11 @@ class BBGame(Widget):
         #initiate reserves if ball misses paddle   
         if (self.ball.y<self.y):
             self.serve_ball(vel=(4, 0))
-    
+
     #allows for user control on paddle using mouse (plan to change it to arrow keys)
     def on_touch_move(self, touch):
         self.player.center_x = touch.x
+    
 
 class BBApp(App):
     def build(self):
