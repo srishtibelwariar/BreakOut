@@ -9,7 +9,7 @@ from kivy.clock import Clock
 from kivy.properties import NumericProperty
 from kivy.properties import ReferenceListProperty
 from kivy.properties import ObjectProperty
-
+from random import randint
 
 class BBBrick(Widget):
     def bounce_off_brick(self, ball):
@@ -82,10 +82,12 @@ class BBGame(Widget):
     b63= ObjectProperty(None)
     b73= ObjectProperty(None)
     
-    def serve_ball(self,  vel=(4, 0)):
+    def serve_ball(self, v=(4,0)):
         self.ball.center_x = self.player.center_x
-        self.ball.y = self.y +60
-        self.ball.velocity = vel
+        self.ball.y = self.y + 100
+        self.ball.center=self.ball.center_x, self.ball.y
+        v=Vector(v)
+        self.ball.velocity = v.rotate(randint(50, 130))
 
     def update(self, dt):
         self.ball.move()
@@ -128,7 +130,7 @@ class BBGame(Widget):
         
         #initiate reserves if ball misses paddle   
         if (self.ball.y<self.y):
-            self.serve_ball(vel=(4, 0))
+            self.serve_ball(v=(4, 0))
 
     #allows for user control on paddle using mouse (plan to change it to arrow keys)
     def on_touch_move(self, touch):
