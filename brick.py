@@ -20,7 +20,7 @@ class BBBrick(Widget):
             rebound = Vector(vx, vy)
             vel = rebound * 1
             ball.v = vel.x, vel.y + offset
-            self.size = 0;
+            self.size = 0,0
 
 class BBPaddle(Widget):
     def bounce_ball(self, ball):
